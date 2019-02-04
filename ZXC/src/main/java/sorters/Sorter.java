@@ -5,52 +5,13 @@ import java.util.Arrays;
 public class Sorter {
     //here must be five methods of sorting an array
     static public void bubbleSortUp(Integer[] array){
-        boolean flag = true;
-        int temp;
-        while (flag == true){
-            flag = false;
-            for(int i =0;i<array.length-1;i++){
-                if(array[i] > array[i+1]){
-                    flag = true;
-                    temp = array[i];
-                    array[i] = array[i+1];
-                    array[i+1] = temp;
-                }
-            }
-        }
+
     }
     static public void bubbleSortDown(Integer[] array){
-        boolean flag = true;
-        int temp;
-        while (flag == true){
-            flag = false;
-            for(int i =array.length-1;i>0;i--){
-                if(array[i] < array[i-1]){
-                    flag = true;
-                    temp = array[i];
-                    array[i] = array[i-1];
-                    array[i-1] = temp;
-                }
-            }
-        }
+
     }
     static public void swapSort(Integer[] array){
-        int temp,minVal,minInd;
-        for(int p =0;p<array.length-1;p++){
-            minVal = array[p];
-            minInd = p;
-            for(int i = p+1;i<array.length;i++){
-                if(array[i]<minVal){
-                    minInd = i;
-                    minVal = array[i];
-                }
-            }
-            if(minInd != p){
-                temp = array[p];
-                array[p] = array[minInd];
-                array[minInd] = temp;
-            }
-        }
+
     }
     static public void mergeSort(Integer[] array, int type){
         int N = (int)(Math.log(array.length)/Math.log(2));

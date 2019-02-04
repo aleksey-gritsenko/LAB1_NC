@@ -1,6 +1,6 @@
 package analyzer;
 
-import sorters.Sorter;
+import sorters.*;
 
 public class AnalyzerOfSortingMethods {
     private Integer[] array;
@@ -11,42 +11,62 @@ public class AnalyzerOfSortingMethods {
     // must be revorked with Reflection API
     public long testMethod1Part1(){
         long start = System.nanoTime();
-        Sorter.bubbleSortUp(array);
+        BubbleUpSorter sorter = new BubbleUpSorter();
+        sorter.setSortedArray(array);
+        sorter.sort();
         return (System.nanoTime() - start);
     }
     public long testMethod1Part2(){
         long start = System.nanoTime();
-        Sorter.bubbleSortDown(array);
+        BubbleDownSorter sorter = new BubbleDownSorter();
+        sorter.setSortedArray(array);
+        sorter.sort();
         return (System.nanoTime() - start);
     }
     public long testMethod2(){
         long start = System.nanoTime();
-        Sorter.swapSort(array);
+        SwapSorter sorter = new SwapSorter();
+        sorter.setSortedArray(array);
+        sorter.sort();
         return (System.nanoTime() - start);
     }
     public long testMethod3(){
         long start = System.nanoTime();
-        Sorter.arraySort(array);
+        ArraySorter sorter = new ArraySorter();
+        sorter.setSortedArray(array);
+        sorter.sort();
         return (System.nanoTime() - start);
     }
     public long testMethod4Part1(){
         long start = System.nanoTime();
-        Sorter.mergeSort(array,0);
+        MergeSorter sorter = new MergeSorter();
+        sorter.setType(0);
+        sorter.setSortedArray(array);
+        sorter.sort();
         return (System.nanoTime() - start);
     }
     public long testMethod4Part2(){
         long start = System.nanoTime();
-        Sorter.mergeSort(array,1);
+        MergeSorter sorter = new MergeSorter();
+        sorter.setType(1);
+        sorter.setSortedArray(array);
+        sorter.sort();
         return (System.nanoTime() - start);
     }
     public long testMethod4Part3(){
         long start = System.nanoTime();
-        Sorter.mergeSort(array,2);
+        MergeSorter sorter = new MergeSorter();
+        sorter.setType(2);
+        sorter.setSortedArray(array);
+        sorter.sort();
         return (System.nanoTime() - start);
     }
     public long testMethod4Part4(){
         long start = System.nanoTime();
-        Sorter.mergeSort(array,3);
+        MergeSorter sorter = new MergeSorter();
+        sorter.setType(3);
+        sorter.setSortedArray(array);
+        sorter.sort();
         return (System.nanoTime() - start);
     }
 }
