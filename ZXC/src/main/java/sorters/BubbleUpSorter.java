@@ -1,9 +1,7 @@
 package sorters;
 
-public class BubbleUpSorter extends AbstractSorter {
+public class BubbleUpSorter extends BubbleSort {
     public void sort(){
-        boolean flag = true;
-        int temp;
         Integer[] array = getSortedArray();
         while (flag == true){
             flag = false;
