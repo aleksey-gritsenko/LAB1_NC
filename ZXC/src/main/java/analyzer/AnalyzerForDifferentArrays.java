@@ -2,19 +2,24 @@ package analyzer;
 
 import fillers.Generator;
 
+import static fillers.Generator.*;
+
 public class AnalyzerForDifferentArrays {
-    private Generator generator;
+    private int length;
+    private int maxStep;
+    private int range;
     long[] data;
 
     public AnalyzerForDifferentArrays(int length,int maxStep,int range){
-        generator = new Generator(length, maxStep, range);
         // get information how many sort methods there are (will be reworked with Reflection API)
-        int number = 8;
+        this.length = length;
+        this.maxStep = maxStep;
+        this.range = range;
         data = new long[8];
     }
     // must be revorked with Reflection API
     public long[] testForArray1(){
-        Integer[] testArray = generator.createSortedArray();
+        Integer[] testArray = createSortedArray(length, maxStep, range);
         AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
         data[0] = analyzer.testMethod1Part1();
         data[1] = analyzer.testMethod1Part2();
@@ -27,7 +32,7 @@ public class AnalyzerForDifferentArrays {
         return data.clone();
     }
     public long[] testForArray2(){
-        Integer[] testArray = generator.createSortedArrayWithX();
+        Integer[] testArray = createSortedArrayWithX(length, maxStep, range);
         AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
         data[0] = analyzer.testMethod1Part1();
         data[1] = analyzer.testMethod1Part2();
@@ -40,7 +45,7 @@ public class AnalyzerForDifferentArrays {
         return data.clone();
     }
     public long[] testForArray3(){
-        Integer[] testArray = generator.createBacksortedArray();
+        Integer[] testArray = createBacksortedArray(length, maxStep, range);
         AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
         data[0] = analyzer.testMethod1Part1();
         data[1] = analyzer.testMethod1Part2();
@@ -53,7 +58,7 @@ public class AnalyzerForDifferentArrays {
         return data.clone();
     }
     public long[] testForArray4(){
-        Integer[] testArray = generator.createUnsortedArray();
+        Integer[] testArray = createUnsortedArray(length, maxStep, range);
         AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
         data[0] = analyzer.testMethod1Part1();
         data[1] = analyzer.testMethod1Part2();
