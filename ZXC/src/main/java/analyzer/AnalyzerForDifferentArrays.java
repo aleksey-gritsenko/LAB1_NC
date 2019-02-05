@@ -19,7 +19,7 @@ public class AnalyzerForDifferentArrays {
     }
     // must be revorked with Reflection API
     public long[] testForArray1(){
-        Integer[] testArray = createSortedArray(length, maxStep, range);
+        int[] testArray = createSortedArray(length, maxStep, range);
         AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
         data[0] = analyzer.testMethod1Part1();
         data[1] = analyzer.testMethod1Part2();
@@ -32,7 +32,7 @@ public class AnalyzerForDifferentArrays {
         return data.clone();
     }
     public long[] testForArray2(){
-        Integer[] testArray = createSortedArrayWithX(length, maxStep, range);
+        int[] testArray = createSortedArrayWithX(length, maxStep, range);
         AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
         data[0] = analyzer.testMethod1Part1();
         data[1] = analyzer.testMethod1Part2();
@@ -45,7 +45,7 @@ public class AnalyzerForDifferentArrays {
         return data.clone();
     }
     public long[] testForArray3(){
-        Integer[] testArray = createBacksortedArray(length, maxStep, range);
+        int[] testArray = createBacksortedArray(length, maxStep, range);
         AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
         data[0] = analyzer.testMethod1Part1();
         data[1] = analyzer.testMethod1Part2();
@@ -58,7 +58,7 @@ public class AnalyzerForDifferentArrays {
         return data.clone();
     }
     public long[] testForArray4(){
-        Integer[] testArray = createUnsortedArray(length, maxStep, range);
+        int[] testArray = createUnsortedArray(length, maxStep, range);
         AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
         data[0] = analyzer.testMethod1Part1();
         data[1] = analyzer.testMethod1Part2();

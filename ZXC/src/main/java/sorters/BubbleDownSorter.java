@@ -1,8 +1,7 @@
 package sorters;
 
 public class BubbleDownSorter extends BubbleSort {
-    public void sort(){
-        Integer[] array = getSortedArray();
+    public void sort(int[] array){
         while (flag == true){
             flag = false;
             for(int i = array.length-1;i>0;i--){

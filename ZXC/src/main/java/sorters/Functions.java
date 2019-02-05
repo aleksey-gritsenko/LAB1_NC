@@ -1,9 +1,9 @@
 package sorters;
 
 public class Functions {
-    public static Integer[] Merger(Integer[] array1, Integer[] array2){
+    public static int[] Merger(int[] array1, int[] array2){
         int length = array1.length + array2.length;
-        Integer[] array = new Integer[length];
+        int[] array = new int[length];
 
         int p1,p2,p;
         p1=p2=p=0;
@@ -34,7 +34,7 @@ public class Functions {
 
         return array;
     }
-    public static void sort(Integer[] A, int left, int right){
+    public static void sort(int[] A, int left, int right){
         int s = A[(left+right)/2-1];
         int i = left;
         int j = right;

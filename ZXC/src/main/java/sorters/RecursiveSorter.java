@@ -4,8 +4,7 @@ import java.util.Arrays;
 
 public class RecursiveSorter extends AbstractSorter {
     @Override
-    public void sort() {
-        Integer[] array = getSortedArray();
+    public void sort(int[] array) {
         Arrays.sort(array,1,array.length);
     }
 }

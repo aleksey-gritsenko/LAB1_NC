@@ -7,45 +7,37 @@ public class MergeSorter extends AbstractSorter {
         if((type < maxTypeNumber)&&(type>=0))
         this.type = type;
     }
-    public void sort(){
-        Integer[] array = getSortedArray();
+    public void sort(int[] array){
+        BubbleUpSorter sorter1 = new BubbleUpSorter();
+        BubbleDownSorter sorter2 = new BubbleDownSorter();
+        SwapSorter sorter3 = new SwapSorter();
+        ArraySorter sorter4 = new ArraySorter();
+
         int N = (int)(Math.log(array.length)/Math.log(2));
         int length1 = array.length/N;
         int length2 = array.length%N;
         int length;
-        Integer[] tempArray;
-        Integer[] mergeArray = new Integer[0];
+        int[] tempArray;
+        int[] mergeArray = new int[0];
         for(int i =0;i<=N;i++){
             length = (i<N)?length1:length2;
-            tempArray = new Integer[length];
+            tempArray = new int[length];
             for(int j = 0;j<length;j++){
                 tempArray[j] = array[j+i*length1];
             }
             switch (type){
                 case 0:
-                {BubbleUpSorter sorter = new BubbleUpSorter();
-                    sorter.setSortedArray(tempArray);
-                    sorter.sort();
+                    sorter1.sort(tempArray);
                     break;
-                }
                 case 1:
-                {BubbleDownSorter sorter = new BubbleDownSorter();
-                    sorter.setSortedArray(tempArray);
-                    sorter.sort();
+                    sorter2.sort(tempArray);
                     break;
-                }
                 case 2:
-                {SwapSorter sorter = new SwapSorter();
-                    sorter.setSortedArray(tempArray);
-                    sorter.sort();
+                    sorter3.sort(tempArray);
                     break;
-                }
                 default:
-                {ArraySorter sorter = new ArraySorter();
-                    sorter.setSortedArray(tempArray);
-                    sorter.sort();
+                    sorter4.sort(tempArray);
                     break;
-                }
             }
 
             if(i == 0){

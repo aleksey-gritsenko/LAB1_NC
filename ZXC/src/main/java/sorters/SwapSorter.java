@@ -4,8 +4,7 @@ public class SwapSorter extends AbstractSorter {
     private int temp;
     private int minVal;
     private int minInd;
-    public void sort(){
-        Integer[] array = getSortedArray();
+    public void sort(int[] array){
         for(int p =0;p<array.length-1;p++){
             minVal = array[p];
             minInd = p;

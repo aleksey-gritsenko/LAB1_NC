@@ -3,14 +3,14 @@ package fillers;
 import java.util.Random;
 //class for creating arrays
 public class Generator {
-    private static Integer[] Array;
+    private static int[] Array;
     //method 1 Sorted arraya
-    public static Integer[] createSortedArray(int length, int maxStep, int range){
+    public static int[] createSortedArray(int length, int maxStep, int range){
         if (length > 0) {
-            Array = new Integer[length];
+            Array = new int[length];
         } else {
             System.out.println("Try another length");
-            Array = new Integer[0];
+            Array = new int[0];
         }
         final Random random = new Random();
         Array[0]  = random.nextInt(maxStep);
@@ -20,12 +20,12 @@ public class Generator {
         return Array.clone();
     }
     //method 2 Sorted array with X
-    public static Integer[] createSortedArrayWithX(int length, int maxStep, int range){
+    public static int[] createSortedArrayWithX(int length, int maxStep, int range){
         if (length > 0) {
-            Array = new Integer[length];
+            Array = new int[length];
         } else {
             System.out.println("Try another length");
-            Array = new Integer[0];
+            Array = new int[0];
         }
         final Random random = new Random();
         Array = createSortedArray(length,maxStep,range);
@@ -33,12 +33,12 @@ public class Generator {
         return Array.clone();
     }
     //method 3 Backsorted array
-    public static Integer[] createBacksortedArray(int length, int maxStep, int range){
+    public static int[] createBacksortedArray(int length, int maxStep, int range){
         if (length > 0) {
-            Array = new Integer[length];
+            Array = new int[length];
         } else {
             System.out.println("Try another length");
-            Array = new Integer[0];
+            Array = new int[0];
         }
         final Random random = new Random();
         Array[0] = maxStep*Array.length;
@@ -48,12 +48,12 @@ public class Generator {
         return Array.clone();
     }
     //method 4 Unsorted array
-    public static Integer[] createUnsortedArray(int length, int maxStep, int range){
+    public static int[] createUnsortedArray(int length, int maxStep, int range){
         if (length > 0) {
-            Array = new Integer[length];
+            Array = new int[length];
         } else {
             System.out.println("Try another length");
-            Array = new Integer[0];
+            Array = new int[0];
         }
         final Random random = new Random();
         for(int i=0;i<Array.length;i++){
