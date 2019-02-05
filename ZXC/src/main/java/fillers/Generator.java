@@ -1,10 +1,16 @@
 package fillers;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.util.Random;
+
 //class for creating arrays
 public class Generator {
     private static int[] Array;
-    //method 1 Sorted arraya
+    //method 1 Sorted array
+    @Filler(name = "Sorted")
     public static int[] createSortedArray(int length, int maxStep, int range){
         if (length > 0) {
             Array = new int[length];
@@ -20,6 +26,7 @@ public class Generator {
         return Array.clone();
     }
     //method 2 Sorted array with X
+    @Filler(name = "Sorted_with_X")
     public static int[] createSortedArrayWithX(int length, int maxStep, int range){
         if (length > 0) {
             Array = new int[length];
@@ -33,6 +40,7 @@ public class Generator {
         return Array.clone();
     }
     //method 3 Backsorted array
+    @Filler(name = "Backsorted")
     public static int[] createBacksortedArray(int length, int maxStep, int range){
         if (length > 0) {
             Array = new int[length];
@@ -48,6 +56,7 @@ public class Generator {
         return Array.clone();
     }
     //method 4 Unsorted array
+    @Filler(name = "Unsorted")
     public static int[] createUnsortedArray(int length, int maxStep, int range){
         if (length > 0) {
             Array = new int[length];
