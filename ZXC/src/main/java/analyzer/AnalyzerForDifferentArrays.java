@@ -18,7 +18,6 @@ public class AnalyzerForDifferentArrays {
     long[] data;
 
     public AnalyzerForDifferentArrays(int length,int maxStep,int range){
-        // get information how many sort methods there are (will be reworked with Reflection API)
         this.length = length;
         this.maxStep = maxStep;
         this.range = range;
@@ -47,15 +46,7 @@ public class AnalyzerForDifferentArrays {
                 try {
                     testArray = (int[])method.invoke(null,params);
                     analyzer = new AnalyzerOfSortingMethods(testArray);
-//rework with Reflection
-                    tempData.add(analyzer.testMethod1Part1());
-                    tempData.add(analyzer.testMethod1Part2());
-                    tempData.add(analyzer.testMethod2());
-                    tempData.add(analyzer.testMethod3());
-                    tempData.add(analyzer.testMethod4Part1());
-                    tempData.add(analyzer.testMethod4Part2());
-                    tempData.add(analyzer.testMethod4Part3());
-                    tempData.add(analyzer.testMethod4Part4());
+                    tempData = analyzer.getDataSet();
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 } catch (InvocationTargetException e) {
@@ -67,58 +58,4 @@ public class AnalyzerForDifferentArrays {
         }
         return data;
     }
-    // must be revorked with Reflection API
- /*   public long[] testForArray1(){
-        int[] testArray = createSortedArray(length, maxStep, range);
-        AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
-        data[0] = analyzer.testMethod1Part1();
-        data[1] = analyzer.testMethod1Part2();
-        data[2] = analyzer.testMethod2();
-        data[3] = analyzer.testMethod3();
-        data[4] = analyzer.testMethod4Part1();
-        data[5] = analyzer.testMethod4Part2();
-        data[6] = analyzer.testMethod4Part3();
-        data[7] = analyzer.testMethod4Part4();
-        return data.clone();
-    }
-    public long[] testForArray2(){
-        int[] testArray = createSortedArrayWithX(length, maxStep, range);
-        AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
-        data[0] = analyzer.testMethod1Part1();
-        data[1] = analyzer.testMethod1Part2();
-        data[2] = analyzer.testMethod2();
-        data[3] = analyzer.testMethod3();
-        data[4] = analyzer.testMethod4Part1();
-        data[5] = analyzer.testMethod4Part2();
-        data[6] = analyzer.testMethod4Part3();
-        data[7] = analyzer.testMethod4Part4();
-        return data.clone();
-    }
-    public long[] testForArray3(){
-        int[] testArray = createBacksortedArray(length, maxStep, range);
-        AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
-        data[0] = analyzer.testMethod1Part1();
-        data[1] = analyzer.testMethod1Part2();
-        data[2] = analyzer.testMethod2();
-        data[3] = analyzer.testMethod3();
-        data[4] = analyzer.testMethod4Part1();
-        data[5] = analyzer.testMethod4Part2();
-        data[6] = analyzer.testMethod4Part3();
-        data[7] = analyzer.testMethod4Part4();
-        return data.clone();
-    }
-    public long[] testForArray4(){
-        int[] testArray = createUnsortedArray(length, maxStep, range);
-        AnalyzerOfSortingMethods analyzer = new AnalyzerOfSortingMethods(testArray);
-        data[0] = analyzer.testMethod1Part1();
-        data[1] = analyzer.testMethod1Part2();
-        data[2] = analyzer.testMethod2();
-        data[3] = analyzer.testMethod3();
-        data[4] = analyzer.testMethod4Part1();
-        data[5] = analyzer.testMethod4Part2();
-        data[6] = analyzer.testMethod4Part3();
-        data[7] = analyzer.testMethod4Part4();
-        return data.clone();
-    }*/
-
 }

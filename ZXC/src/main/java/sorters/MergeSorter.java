@@ -43,7 +43,7 @@ public class MergeSorter extends AbstractSorter {
             if(i == 0){
                 mergeArray = tempArray.clone();
             }else{
-                mergeArray = Functions.Merger(mergeArray,tempArray);
+                mergeArray = Functions.Merger.Merger(mergeArray,tempArray);
             }
         }
         for(int i =0;i<array.length;i++) {
