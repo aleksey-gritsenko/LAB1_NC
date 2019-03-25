@@ -1,5 +1,10 @@
 package sorters;
-
+/**
+ * @author <p>
+Gritsenko
+ * </p>
+ * @see BubbleDownSorter
+ **/
 public class BubbleUpSorter extends BubbleSort {
     public void sort(int[] array){
         while (flag == true){

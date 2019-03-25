@@ -1,5 +1,9 @@
 package sorters;
-
+/**
+ * @author <p>
+Gritsenko
+ * </p>
+ **/
 public class SwapSorter extends AbstractSorter {
     private int temp;
     private int minVal;

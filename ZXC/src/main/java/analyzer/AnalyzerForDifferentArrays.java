@@ -10,7 +10,12 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 import static fillers.Generator.*;
-
+/**
+ * @author <p>
+Gritsenko
+ * </p>
+ * @see Generator
+ **/
 public class AnalyzerForDifferentArrays {
     private int length;
     private int maxStep;

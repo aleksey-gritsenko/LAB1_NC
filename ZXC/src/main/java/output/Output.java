@@ -5,7 +5,11 @@ import analyzer.AnalyzerForDifferentArrays;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author <p>
+Gritsenko
+ * </p>
+ **/
 public class Output {
     private int length,maxStep,range;
     public Output(int length,int maxStep,int range){

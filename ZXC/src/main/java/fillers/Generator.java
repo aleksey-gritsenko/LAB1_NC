@@ -6,7 +6,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Random;
 
-//class for creating arrays
+/**
+ * @author <p>
+Gritsenko
+ * </p>
+ **/
 public class Generator {
     private static int[] Array;
     //method 1 Sorted array
