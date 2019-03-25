@@ -10,6 +10,12 @@ import java.util.Random;
  * @author <p>
 Gritsenko
  * </p>
+ * <pre>
+ *     exampele of useage of code block and      tabulation
+ *     {@code
+ *     private static int[] Array;
+ *     }
+ * </pre>
  **/
 public class Generator {
     private static int[] Array;
