@@ -1,52 +1,56 @@
 package analyzer;
 
-import sorters.Sorter;
 
+import org.reflections.Reflections;
+import sorters.*;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.Set;
+/**
+ * @author <p>
+Gritsenko
+ * </p>
+ **/
 public class AnalyzerOfSortingMethods {
-    private Integer[] array;
+    private int[] array;
 
-    public AnalyzerOfSortingMethods(Integer[] array){
+    public AnalyzerOfSortingMethods(int[] array){
         this.array = array;
     }
-    // must be revorked with Reflection API
-    public long testMethod1Part1(){
-        long start = System.nanoTime();
-        Sorter.bubbleSortUp(array);
-        return (System.nanoTime() - start);
-    }
-    public long testMethod1Part2(){
-        long start = System.nanoTime();
-        Sorter.bubbleSortDown(array);
-        return (System.nanoTime() - start);
-    }
-    public long testMethod2(){
-        long start = System.nanoTime();
-        Sorter.swapSort(array);
-        return (System.nanoTime() - start);
-    }
-    public long testMethod3(){
-        long start = System.nanoTime();
-        Sorter.arraySort(array);
-        return (System.nanoTime() - start);
-    }
-    public long testMethod4Part1(){
-        long start = System.nanoTime();
-        Sorter.mergeSort(array,0);
-        return (System.nanoTime() - start);
-    }
-    public long testMethod4Part2(){
-        long start = System.nanoTime();
-        Sorter.mergeSort(array,1);
-        return (System.nanoTime() - start);
-    }
-    public long testMethod4Part3(){
-        long start = System.nanoTime();
-        Sorter.mergeSort(array,2);
-        return (System.nanoTime() - start);
-    }
-    public long testMethod4Part4(){
-        long start = System.nanoTime();
-        Sorter.mergeSort(array,3);
-        return (System.nanoTime() - start);
+    public ArrayList<Long> getDataSet(){
+        ArrayList<Long> data = new ArrayList<Long>();
+        Reflections reflections = new Reflections("sorters");
+        Set<Class<? extends AbstractSorter>> subTypeSorters = reflections.getSubTypesOf(AbstractSorter.class);
+        Constructor constructor;
+        int[] intArrayExample = new int[10];
+
+        for (Class sorterClass:subTypeSorters){
+            if ( Modifier.isAbstract(sorterClass.getModifiers())){}
+            else{
+                try {
+                    constructor = sorterClass.getConstructor(null);
+                    Object newObject = constructor.newInstance();
+                    Object[] params = {array.clone()};
+                    Class[] paramTypes = {intArrayExample.getClass()};
+                    Method sortMethod = sorterClass.getMethod("sort",paramTypes);
+                    long start = System.nanoTime();
+                    sortMethod.invoke(newObject,params);
+                    data.add(System.nanoTime() - start);
+                } catch (NoSuchMethodException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return data;
     }
 }
