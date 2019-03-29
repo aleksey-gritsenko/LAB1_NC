@@ -11,16 +11,36 @@ public class BubbleUpSorterTests extends Assert {
     }
     @Test(timeout = 100)
     public void testTimeoutSort(){
-        sorter.sort(array);
+        try{
+            sorter.sort(array);
+        }
+        catch (NullPointerException thrown){
+        }
     }
     @Test
     public void testSort(){
         int[] array = {1,5,2,4,3};
-        sorter.sort(array);
+        try{
+            sorter.sort(array);
+        }
+        catch (NullPointerException thrown){
+        }
         for (int i = 1;i<array.length;i++){
             if (array[i]<array[i-1]){
                 assertFalse(true);
             }
+        }
+    }
+    @Test
+    public void testExeptionSort() throws NullPointerException{
+        int[] array = {};
+        try{
+            array = null;
+            sorter.sort(array);
+            Assert.fail("Expected IOExeption");
+        }
+        catch (NullPointerException thrown){
+            Assert.assertNotEquals("",thrown.getMessage());
         }
     }
 

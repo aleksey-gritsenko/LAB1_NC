@@ -8,7 +8,7 @@ public class SwapSorter extends AbstractSorter {
     private int temp;
     private int minVal;
     private int minInd;
-    public void sort(int[] array){
+    public void sort(int[] array) throws NullPointerException{
         for(int p =0;p<array.length-1;p++){
             minVal = array[p];
             minInd = p;

@@ -6,7 +6,7 @@ Gritsenko
  * @see BubbleUpSorter
  **/
 public class BubbleDownSorter extends BubbleSort {
-    public void sort(int[] array){
+    public void sort(int[] array) throws NullPointerException{
         while (flag == true){
             flag = false;
             for(int i = array.length-1;i>0;i--){

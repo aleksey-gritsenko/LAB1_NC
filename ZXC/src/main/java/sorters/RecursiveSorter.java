@@ -8,7 +8,7 @@ Gritsenko
  **/
 public class RecursiveSorter extends AbstractSorter {
     @Override
-    public void sort(int[] array) {
+    public void sort(int[] array) throws NullPointerException {
         Arrays.sort(array,1,array.length);
     }
 }

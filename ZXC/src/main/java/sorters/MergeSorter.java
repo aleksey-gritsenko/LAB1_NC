@@ -7,6 +7,4 @@ package sorters;
  *     realizes one of the sorting algorithms</p>
  **/
 public abstract class MergeSorter extends AbstractSorter {
-    public void sort(int[] array) {
-    }
 }

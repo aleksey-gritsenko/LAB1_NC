@@ -8,7 +8,7 @@ Gritsenko
  *     realizes one of the sorting algorithms</p>
  **/
 public class MergeSorter1 extends MergeSorter {
-    public void sort(int[] array){
+    public void sort(int[] array) throws NullPointerException{
         BubbleUpSorter sorter = new BubbleUpSorter();
 
         int N = (int)(Math.log(array.length)/Math.log(2));

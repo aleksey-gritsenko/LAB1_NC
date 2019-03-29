@@ -23,5 +23,17 @@ public class SwapSorterTests extends Assert {
             }
         }
     }
+    @Test
+    public void testExeptionSort() throws NullPointerException{
+        int[] array = {};
+        try{
+            array = null;
+            sorter.sort(array);
+            Assert.fail("Expected IOExeption");
+        }
+        catch (NullPointerException thrown){
+            Assert.assertNotEquals("",thrown.getMessage());
+        }
+    }
 
 }

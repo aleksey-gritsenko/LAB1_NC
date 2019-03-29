@@ -71,5 +71,53 @@ public class MergeSorterTests extends Assert{
             }
         }
     }
+    @Test
+    public void testExeptionSort1() throws NullPointerException{
+        int[] array = {};
+        try{
+            array = null;
+            sorter1.sort(array);
+            Assert.fail("Expected IOExeption");
+        }
+        catch (NullPointerException thrown){
+            Assert.assertNotEquals("",thrown.getMessage());
+        }
+    }
+    @Test
+    public void testExeptionSort2() throws NullPointerException{
+        int[] array = {};
+        try{
+            array = null;
+            sorter2.sort(array);
+            Assert.fail("Expected IOExeption");
+        }
+        catch (NullPointerException thrown){
+            Assert.assertNotEquals("",thrown.getMessage());
+        }
+    }
+    @Test
+    public void testExeptionSort3() throws NullPointerException{
+        int[] array = {};
+        try{
+            array = null;
+            sorter3.sort(array);
+            Assert.fail("Expected IOExeption");
+        }
+        catch (NullPointerException thrown){
+            Assert.assertNotEquals("",thrown.getMessage());
+        }
+    }
+    @Test
+    public void testExeptionSort4() throws NullPointerException{
+        int[] array = {};
+        try{
+            array = null;
+            sorter4.sort(array);
+            Assert.fail("Expected IOExeption");
+        }
+        catch (NullPointerException thrown){
+            Assert.assertNotEquals("",thrown.getMessage());
+        }
+    }
 
 }

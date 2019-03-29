@@ -1,5 +1,7 @@
 package sorters;
 
+import java.io.IOException;
+
 /**
  * @author <p>
 Gritsenko
@@ -8,7 +10,7 @@ Gritsenko
  *     realizes one of the sorting algorithms</p>
  **/
 public class MergeSorter4 extends MergeSorter {
-    public void sort(int[] array){
+    public void sort(int[] array) throws NullPointerException{
     ArraySorter sorter = new ArraySorter();
 
     int N = (int)(Math.log(array.length)/Math.log(2));
@@ -23,7 +25,7 @@ public class MergeSorter4 extends MergeSorter {
         for(int j = 0;j<length;j++){
             tempArray[j] = array[j+i*length1];
         }
-        sorter.sort(tempArray);
+            sorter.sort(tempArray);
         if(i == 0){
             mergeArray = tempArray.clone();
         }else{
